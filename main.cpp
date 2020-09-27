@@ -44,5 +44,28 @@ std::vector<int> makeMeARandomTab()
 
 int main() {
   auto tab = makeMeARandomTab();
-  std::cout << "Chouette tableau, non ?" << std::endl;
+
+  std::random_device r;
+  std::default_random_engine engine(r());
+  std::uniform_int_distribution<int> dist(1, 6);
+  switch (dist(engine)) {
+    case 1:
+      std::cout << "Chouette tableau, non ?";
+      break;
+    case 2:
+      std::cout << "Hmmm....";
+      break;
+    case 3:
+      std::cout << "Je ne suis pas très satisfait de ce tableau";
+      break;
+    case 4:
+      std::cout << "Oui, oui, c'est... un tableau.";
+      break;
+    case 5:
+      std::cout << "Magnifique !";
+      break;
+    default:
+      std::cout << "Voilà voilà, à la prochaine fois.";
+  }
+  std::cout << std::endl;
 }
